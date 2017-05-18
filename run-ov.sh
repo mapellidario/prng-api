@@ -1,6 +1,6 @@
 #!/bin/bash
 
 current=`pwd`
-cd install
+cd install/bin
 ./api-ov
 cd $current

@@ -1,6 +1,6 @@
 #!/bin/bash
 
 current=`pwd`
-cd install
+cd install/bin
 ./bench-ram-repeat
 cd $current
