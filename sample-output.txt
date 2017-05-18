@@ -1,0 +1,126 @@
+ ./run-ov.sh 
+Simple dSFMT and ranlux usage
+
+
+
+ranlux
+0.418483
+0.550443
+0.000925
+0.739611
+0.154398
+0.032748
+0.135616
+0.911048
+0.644769
+0.672274
+
+dsfmt
+0.125624
+0.116112
+0.910832
+0.259029
+0.905977
+0.684439
+0.109238
+0.255062
+0.796461
+0.607095
+
+➜ ./run-ov-bis.sh 
+
+Simple dSFMT and ranlux usage
+
+File produced ID: 1495040771
+
+ranlux
+
+dSFMT
+
+➜ less build/rand_1495040771.txt 
+
+➜ ./run-ram.sh 
+
+Simple dSFMT and ranlux usage
+
+ rand_length: 100000000
+ rand_arr dimension: 0.745058 GiB 
+
+ranlux alloc time:   0.000014 sec
+ranlux gen time:     3.776787 sec
+ranlux copy time:    0.133324 sec
+ranlux free time:    0.001814 sec
+ranlux total time:   3.911939 sec
+
+dSFMT alloc time:   0.000017 sec
+dSFMT gen time:     0.235123 sec
+dSFMT copy time:    0.000001 sec
+dSFMT free time:    0.001800 sec
+dSFMT total time:   0.236941 sec
+
+➜ ./run-ram-repeat.sh 
+
+Test dSFMT and ranlux
+
+ rand_length: 100000
+ repeat: 10
+ test_num: 2
+rand_card: 2.000000e+06
+rand_arr_storage dimension: 0.014901 GiB 
+---------
+counter: 0
+ranlux time: 0.077195 sec
+period of the dSFMT sequence multiple of 2^216091-1
+dSFMT time: 0.002503 sec
+---------
+counter: 1
+ranlux time: 0.039153 sec
+period of the dSFMT sequence multiple of 2^216091-1
+dSFMT time: 0.002336 sec
+
+➜ ./run-disk.sh 
+
+Simple dSFMT and ranlux usage
+
+ rand_arr storage dimension: 34.332275 MiB 
+
+File produced ID: 1495040839
+ranlux alloc time:      0.000012 sec
+ranlux gen time:        0.078824 sec
+ranlux fprintf time:    0.388995 sec
+ranlux free time:       0.000119 sec
+ranlux total time:      0.467950 sec
+
+dSFMT alloc time:      0.000024 sec
+dSFMT gen time:        0.002676 sec
+dSFMT fprintf time:    0.378173 sec
+dSFMT free time:       0.000001 sec
+dSFMT total time:      0.380874 sec
+
+➜ less build/rand_1495040839.txt 
+
+➜ du -BM -s build/rand_1495040839.txt 
+
+35M     build/rand_1495040839.txt
+
+➜ ./run-disk-repeat.sh 
+
+Test dSFMT and ranlux
+
+ rand_length: 100000
+ repeat: 10
+ test_num: 2
+rand_card: 2.000000e+06
+file_dimension : 38.146973 MiB 
+File produced ID: 1495040890
+---------
+counter: 0
+ranlux time: 0.462920 sec
+period of the dSFMT sequence multiple of 2^216091-1
+dSFMT time: 0.389384 sec
+---------
+counter: 1
+ranlux time: 0.424006 sec
+period of the dSFMT sequence multiple of 2^216091-1
+dSFMT time: 0.386345 sec
+
