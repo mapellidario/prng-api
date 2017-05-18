@@ -1,19 +1,16 @@
 /*
-Test of dSFMT and ranlux.
-
-Simplest possible program
-
+* Test of dSFMT and ranlux APIs.
+* Dario Mapelli, mapelli.dario@gmail.com
+* Simplest possible program
 */
 
-//C
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
 
-//personali
-#include "ranlxd.h" //ranlux include file
-#include "dSFMT.h" //dSFMT include file
+#include "ranlxd.h"
+#include "dSFMT.h"
 #include "dSFMT-api.h"
 #include "ranlux-api.h"
 
@@ -58,10 +55,7 @@ int main (int numArg, char * listArg[])
     int size = dsfmt_get_min_array_size();
     if (size <  rand_length) {
         size =  rand_length;
-    } //dSFMT ha una dimensione minima per poter lavorare
-    // dSFMT_alloc (&rand_arr, size) ;
-    // dsfmt_gv_init_gen_rand( time (NULL) ) ;
-    // dsfmt_gv_fill_array_close_open(rand_arr, size);
+    }
 	int dSFMT_check = dSFMT_alloc_fill(&rand_arr, size, time(NULL));
 	if (dSFMT_check == 1) {
 		exit(EXIT_FAILURE) ;

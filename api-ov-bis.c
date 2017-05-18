@@ -1,19 +1,17 @@
 /*
-Example of usage of dSFMT and ranlux.
-
-Memory allocation separated from random number generation
-
+* Example of usage of dSFMT and ranlux.
+* Dario Mapelli, mapelli.dario@gmail.com
+* Similar to api-ov.c, but here memory allocation separated from
+* random number generation
 */
 
-//C
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
 
-//personali
-#include "ranlxd.h" //ranlux include file
-#include "dSFMT.h" //dSFMT include file
+#include "ranlxd.h"
+#include "dSFMT.h"
 #include "dSFMT-api.h"
 #include "ranlux-api.h"
 
@@ -60,7 +58,7 @@ int main (int numArg, char * listArg[])
     int size = dsfmt_get_min_array_size();
     if (size <  rand_length) {
         size =  rand_length;
-    } //dSFMT ha una dimensione minima per poter lavorare
+    } //dSFMT requires a minimum array length to work
     int dSFMT_check = dSFMT_alloc (&rand_arr, size) ;
 	if (dSFMT_check == 1) {
 		exit(EXIT_FAILURE) ;
@@ -75,8 +73,6 @@ int main (int numArg, char * listArg[])
 	}
     free(rand_arr) ;
 
-	//Fine Programma
 	fclose(output_file) ;
-
 	return 0;
 }

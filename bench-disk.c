@@ -1,27 +1,25 @@
 /*
-Test of dSFMT and ranlux.
-
-In depth time analysis.
-
+* Benchmark dSFMT and ranlux performances.
+*
+* Dario Mapelli, mapelli.dario@gmail.com
+*
+* Detailed analysis of the time required by the various operations.
+* It does not use huge arrays, it tests how saving the data to the disk
+* affects the execution time
 */
 
-//C
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
 
-//personali
-#include "ranlxd.h" //ranlux include file
-#include "dSFMT.h" //dSFMT include file
+#include "ranlxd.h"
+#include "dSFMT.h"
 #include "dSFMT-api.h"
 #include "ranlux-api.h"
 
 int main (int numArg, char * listArg[])
 {
-	printf( "Simple dSFMT and ranlux usage\n\n" ) ;
-
-    // parameters setting
 	int rand_length = 1e6 ;
 
 	double max_disk = 100. ; //MiB
@@ -80,7 +78,7 @@ int main (int numArg, char * listArg[])
     int size = dsfmt_get_min_array_size();
     if (size <  rand_length) {
         size =  rand_length;
-    } //dSFMT ha una dimensione minima per poter lavorare
+    }
     int dSFMT_check = dSFMT_alloc (&rand_arr, size) ;
 	if (dSFMT_check == 1) {
 		exit(EXIT_FAILURE) ;
@@ -106,8 +104,6 @@ int main (int numArg, char * listArg[])
     cpu_time_tot = ((double) (end - start)) / CLOCKS_PER_SEC ;
     printf("dSFMT total time:    %10f sec\n", cpu_time_tot);
 
-	//Fine Programma
 	fclose(output_file);
-
 	return 0;
 }

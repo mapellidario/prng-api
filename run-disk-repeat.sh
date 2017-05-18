@@ -1,6 +1,6 @@
 #!/bin/bash
 
 current=`pwd`
-cd build
+cd install
 ./bench-disk-repeat
 cd $current

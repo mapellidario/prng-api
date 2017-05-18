@@ -1,20 +1,25 @@
-/*******************************************************************************
-* Here are defined the functions that allocate memory for and fill up the arrays
-* containing the random numbers.
-* ranlux and dSFMT work better if they create all the random numbers all
-* in once, so it is preferable to generate and store as much as random numbers
-* as possible in huge arrays
+/***********************************************************************
+* This is a simple dSFMT API.
 *
-* NOTE: to use the malloc indside a function is necesary to pass the pointer
-* to the array. this means that double pointars are passed to these functions
-*******************************************************************************/
+* Dario Mapelli, mapelli.dario@gmail.com
+*
+* Here are defined the functions that allocate memory for and fill up
+* the arrays containing the random numbers.
+* ranlux works better if it create all the random numbers all
+* in once, so it is preferable to generate and store as much as
+* random numbers as possible in huge arrays
+*
+* NOTE: to use the malloc indside a function is necesary to pass the
+* pointer to the array. this means that double pointars are passed to
+* these functions
+***********************************************************************/
+
 #define RANLUX_C
 
 #include<stdlib.h>
 #include<stdio.h>
-#include "ranlxd.h" //ranlux include file
+#include "ranlxd.h"
 
-//Memory allocation
 int ranlux_alloc (double** array, int dimension) {
 	*array = NULL ;
 	long int size_array = sizeof(double) * (dimension) ;
