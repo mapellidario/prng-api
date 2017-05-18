@@ -1,4 +1,6 @@
-# dsfmt and ranlux test
+# dSFMT and ranlux APIs
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.581067.svg)](https://doi.org/10.5281/zenodo.581067)
 
 This repo contains an API to ease the interaction with `ranlux` and
 `dSFMT`, which are libraries for pseudo-random numbers generation.
