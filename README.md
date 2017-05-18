@@ -15,12 +15,12 @@ Compile with
 
 Content:
 
-* `api-overview`: it shows how to use the APIs. Run with `run-ov.sh`
-* `api-overview-bis`: it shows how to use the APIs separating the allocation from the generation. Run with `run-ov-bis.sh`
-* `bench-heavy-ram`: monitors the permormance of `ranlux` and `dSFMT` by generating a large random array. Run with `run-ram.sh`
-* `bench-heavy-disk`: similar to `random-test-ram`, but uses smaller arrays and saves them to the disk. Run with `run-disk.sh`
-* `bench-heavy-disk-repeat`: repeats the test a certain number of times. Run with `run-disk-repeat.sh`.
-* `bench-heavy-ram-repeat`: repeats the test a certain number of times. Run with `bench-ram-repeat.sh`.
+* `api-ov`: it shows how to use the APIs. Run with `run-ov.sh`
+* `api-ov-bis`: it shows how to use the APIs separating the allocation from the generation. Run with `run-ov-bis.sh`
+* `bench-ram`: monitors the permormance of `ranlux` and `dSFMT` by generating a large random array. Run with `run-ram.sh`
+* `bench-disk`: similar to `random-test-ram`, but uses smaller arrays and saves them to the disk. Run with `run-disk.sh`
+* `bench-disk-repeat`: repeats the test a certain number of times. Run with `run-disk-repeat.sh`.
+* `bench-ram-repeat`: repeats the test a certain number of times. Run with `bench-ram-repeat.sh`.
 
 ## References
 
